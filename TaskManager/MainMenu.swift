@@ -13,11 +13,25 @@ var quitProgram = false //When this equals true the program will close.
 class Menu {
     func launchProgram() {
         //This function will launch the program as a whole.
-        /*
- 
-        Add future code here
- 
-        */
+        while !quitProgram {
+            printMenu()
+            var input = getUserInput()
+            while !validateInput(input) {
+                printMenu()
+                input = getUserInput()
+            }
+            handleInput(input)
+            
+        }
+    }
+    
+    //This function overlooks the user input and validates it as the user enters it. if the user enters something that isn't valid then it will ask the user to enter a new option until they get a valid one.
+    func validateInput(_ input: String) -> Bool {
+        let validMenuOptions = Array(1...8)
+        guard let number = Int(input) else {
+            return false
+        }
+        return validMenuOptions.contains(number)
     }
     
     func printMenu() {
@@ -38,6 +52,30 @@ class Menu {
         
         What would you like do? (select a number between 1 and 8)
         """)
+    }
+    
+    func handleInput(_ input: String) {
+        //This function handles user input. they enter a number between 1 and 8 and when selecting one of those numbers they are taken to option of whatever number they selected.
+        switch input {
+        case "1":
+            print("Call Create a task function.")
+        case "2":
+            print("Call Delete a task function.")
+        case "3":
+            print("Call List of all Tasks function.")
+        case "4":
+            print("Call List of all Completed Tasks function.")
+        case "5":
+            print("Call List of all Uncompleted Tasks function.")
+        case "6":
+            print("Call List a Task as Complete function.")
+        case "7":
+            print("Call List a Completed task as Uncompleted function.")
+        case "8":
+            print("Call Quit Application function.")
+        default:
+            break
+        }
     }
     
     func quit() {
