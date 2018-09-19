@@ -11,6 +11,9 @@ import Foundation
 var quitProgram = false //When this equals true the program will close.
 
 class Menu {
+    
+    let TaskManager = ListOfTasks()
+    
     func launchProgram() {
         //This function will launch the program as a whole.
         while !quitProgram {
@@ -58,21 +61,21 @@ class Menu {
         //This function handles user input. they enter a number between 1 and 8 and when selecting one of those numbers they are taken to option of whatever number they selected.
         switch input {
         case "1":
-            print("Call Create a task function.")
+            TaskManager.CreateTask()
         case "2":
-            print("Call Delete a task function.")
+            TaskManager.removeTask()
         case "3":
-            print("Call List of all Tasks function.")
+            TaskManager.listOfAllTasks()
         case "4":
-            print("Call List of all Completed Tasks function.")
+            TaskManager.listOfAllCompletedTasks()
         case "5":
-            print("Call List of all Uncompleted Tasks function.")
+            TaskManager.listOfAllUncompletedTasks()
         case "6":
-            print("Call List a Task as Complete function.")
+            TaskManager.listTaskAsComplete()
         case "7":
-            print("Call List a Completed task as Uncompleted function.")
+            TaskManager.listTaskAsUncomplete()
         case "8":
-            print("Call Quit Application function.")
+            quit()
         default:
             break
         }

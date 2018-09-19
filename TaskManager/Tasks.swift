@@ -9,7 +9,7 @@
 import Foundation
 
 class Task {
-    //This is the class of the tasks that the user will be entering into their list of tasks to do. It will be taking in the data presented by the user and creating a task out of it as shown below.
+    //This is the class for the tasks that the user will be entering into their list of tasks to do. It will be taking in the data presented by the user and creating a task out of it as shown below.
     var title: String
     var detailsOfTask: String
     var completionStatus: Bool = false
