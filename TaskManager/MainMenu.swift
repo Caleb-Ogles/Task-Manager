@@ -12,6 +12,7 @@ var quitProgram = false //When this equals true the program will close.
 
 class Menu {
     
+    //This connects our list of functions for the task menu to allow us to use user input to call these function.
     let TaskManager = ListOfTasks()
     
     func launchProgram() {
@@ -30,7 +31,7 @@ class Menu {
     
     //This function overlooks the user input and validates it as the user enters it. if the user enters something that isn't valid then it will ask the user to enter a new option until they get a valid one.
     func validateInput(_ input: String) -> Bool {
-        let validMenuOptions = Array(1...8)
+        let validMenuOptions = Array(1...10)
         guard let number = Int(input) else {
             return false
         }
@@ -50,15 +51,16 @@ class Menu {
         5) List of all Uncompleted Tasks        |
         6)  List a Task as Complete             |
         7) List a Completed Task as Uncompleted |
-        8)  Quit Application                    |
+        8)  Edit a Task                         |
+        9) Quit Application                     |
         ----------------------------------------
         
-        What would you like do? (select a number between 1 and 8)
+        What would you like do? (select a number between 1 and 9)
         """)
     }
     
     func handleInput(_ input: String) {
-        //This function handles user input. they enter a number between 1 and 8 and when selecting one of those numbers they are taken to option of whatever number they selected.
+        //This function handles user input. they enter a number between 1 and 9 and when selecting one of those numbers they are taken to option of whatever number they selected.
         switch input {
         case "1":
             TaskManager.CreateTask()
@@ -75,7 +77,11 @@ class Menu {
         case "7":
             TaskManager.listTaskAsUncomplete()
         case "8":
+            TaskManager.editTask()
+        case "9":
             quit()
+        case "10":
+            TaskManager.easterEgg()
         default:
             break
         }

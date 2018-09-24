@@ -8,6 +8,7 @@
 
 import Foundation
 
+//This is the greeting statement when the user opens the program for the first time.
 print("Welcome to your Task Manager! we make sure you're daily needs get done without any troubles whatsoever!\n")
 
 let taskManagerMenu = Menu() //This piece here creates an instance of our Menu class.
