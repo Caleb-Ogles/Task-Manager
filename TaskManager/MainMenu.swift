@@ -8,6 +8,22 @@
 
 import Foundation
 
+//This is the log in function that takes in user input as a string for both the user name and password and also validates both to make sure they are usable. When the user enters both correctly, then the program should open and run.
+func logIn() {
+    print("Welcome! Please enter your username please.")
+    var userName = readLine()
+    while userName == nil || userName == "" {
+        print("Whoops! The username you entered does not exist. Please try again.")
+        userName = readLine()
+    }
+    print("Enter your password that goes along with this username.")
+    var password = readLine()
+    while password == nil || password == "" {
+        print("Whoops! The password you entered is incorrect. Please try again.")
+        password = readLine()
+    }
+}
+
 var quitProgram = false //When this equals true the program will close.
 
 class Menu {
@@ -31,7 +47,7 @@ class Menu {
     
     //This function overlooks the user input and validates it as the user enters it. if the user enters something that isn't valid then it will ask the user to enter a new option until they get a valid one.
     func validateInput(_ input: String) -> Bool {
-        let validMenuOptions = Array(1...10)
+        let validMenuOptions = Array(1...9)
         guard let number = Int(input) else {
             return false
         }
@@ -55,7 +71,7 @@ class Menu {
         9) Quit Application                     |
         ----------------------------------------
         
-        What would you like do? (select a number between 1 and 9)
+        What would you like do? (select a number between 1 and 8)
         """)
     }
     
@@ -77,10 +93,8 @@ class Menu {
         case "7":
             TaskManager.listTaskAsUncomplete()
         case "8":
-            TaskManager.editTask()
-        case "9":
             quit()
-        case "10":
+        case "9":
             TaskManager.easterEgg()
         default:
             break

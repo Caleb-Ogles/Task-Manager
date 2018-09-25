@@ -8,6 +8,9 @@
 
 import Foundation
 
+//This will call the log in function to prompt the user to log in before they can access the entire program.
+logIn()
+
 //This is the greeting statement when the user opens the program for the first time.
 print("Welcome to your Task Manager! we make sure you're daily needs get done without any troubles whatsoever!\n")
 

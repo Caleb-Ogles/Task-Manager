@@ -129,40 +129,6 @@ class ListOfTasks {
         
     }
     
-    func editTask() {
-        print("So you want to edit a task huh? Very well. Please enter the index of the task you wish to edit")
-        for index in 0..<taskArray.count {
-            print("\(index). \(taskArray[index].title), Description: \(taskArray[index].detailsOfTask)")
-        }
-        var userInput = Int(readLine()!)
-        while userInput == nil {
-            print("Oops! Invalid selection. Please enter a valid option.")
-            userInput = Int(readLine()!)
-        }
-        print("Please enter a new title for your pre-existing task.")
-        var editedTaskName = readLine()
-        while editedTaskName == nil || editedTaskName == "" {
-            print("Oops! Invalid selection. Please enter a valid option.")
-            editedTaskName = readLine()
-        }
-        print("Please enter a new description for your pre-existing task.")
-        var editedTaskDesc = readLine()
-        while editedTaskName == nil || editedTaskName == "" {
-            print("Oops! Invalid selection. Please enter a valid option.")
-            editedTaskDesc = readLine()
-        }
-        let editedTask = Task(title: editedTaskName!, detailsOfTask: editedTaskDesc!)
-        
-        let currentCalendar = Calendar.current
-        let completionDate = currentCalendar.date(byAdding: .hour, value: 2, to: Date())
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, h"
-        print("Seems you changed the time you want this task to be completed. Your new time to complete is \(dateFormatter.string(from: completionDate!)) hours from now.")
-        
-        taskArray.append(editedTask)
-    }
-    
     func easterEgg() {
         
         //Connects the menu to the easter egg function in order for the quit() function to be called at the end.
