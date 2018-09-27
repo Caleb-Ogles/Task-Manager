@@ -67,7 +67,7 @@ class Menu {
         5) List of all Uncompleted Tasks        |
         6)  List a Task as Complete             |
         7) List a Completed Task as Uncompleted |
-        9) Quit Application                     |
+        8) Quit Application                     |
         ----------------------------------------
         
         What would you like do? (select a number between 1 and 8)
