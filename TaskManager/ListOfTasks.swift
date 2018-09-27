@@ -97,7 +97,8 @@ class ListOfTasks {
         
         //User input is taken here in an integer form and also validates to make sure the input can be used.
         var userInput = Int(readLine()!)
-        while userInput == nil {
+        let validTaskIndex = Array(0..<taskArray.count)
+        while userInput == nil || !validTaskIndex.contains(userInput!) {
             print("Oops! Invalid selection. Please select a valid option.")
             userInput = Int(readLine()!)
         }
@@ -119,7 +120,8 @@ class ListOfTasks {
         
         //Takes user input as an integer and also validates it to make sure it is useable.
         var userInput = Int(readLine()!)
-        while userInput == nil {
+        let validTaskIndex = Array(0..<taskArray.count)
+        while userInput == nil || !validTaskIndex.contains(userInput!) {
             print("Oops! Invalid selection. Please enter a valid option.")
             userInput = Int(readLine()!)
         }
